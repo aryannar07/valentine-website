@@ -7,8 +7,6 @@
 
 <style>
 
-/* BODY */
-
 body {
     margin: 0;
     padding: 0;
@@ -19,8 +17,6 @@ body {
     color: white;
     background-color: #ff1a1a;
 }
-
-/* SIDE BACKGROUND IMAGES */
 
 .bg-left, .bg-right {
     position: fixed;
@@ -43,8 +39,6 @@ body {
     background-image: url("pic 2.jpeg");
 }
 
-/* MAIN CONTAINER */
-
 .container {
     position: relative;
     height: 100vh;
@@ -53,8 +47,6 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
-/* HEART */
 
 .heart {
     width: 150px;
@@ -91,14 +83,10 @@ body {
     50% { transform: rotate(-45deg) scale(1.1); }
 }
 
-/* TEXT */
-
 h1 {
     font-size: 3rem;
     margin-bottom: 30px;
 }
-
-/* BUTTONS */
 
 button {
     padding: 15px 30px;
@@ -121,15 +109,11 @@ button {
     position: absolute;
 }
 
-/* MESSAGE */
-
 #message {
     font-size: 2rem;
     margin-top: 20px;
     display: none;
 }
-
-/* POPUP IMAGE */
 
 #popupImage {
     position: fixed;
@@ -152,41 +136,35 @@ button {
 
 <body>
 
-<!-- SIDE BACKGROUNDS -->
 <div class="bg-left"></div>
 <div class="bg-right"></div>
 
-<!-- POPUP IMAGE -->
 <img src="love bomb.jpeg" id="popupImage">
 
-<!-- MAIN CONTENT -->
 <div class="container">
 
-    <div class="heart"></div>
+<div class="heart"></div>
 
-    <h1>Will You Be My Valentine? ❤️</h1>
+<h1>Will You Be My Valentine? ❤️</h1>
 
-    <button id="yesBtn">Yes 💖</button>
-    <button id="noBtn">No 😢</button>
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 😢</button>
 
-    <div id="message">
-        YAYYYYY! I love you so much ❤️🥰
-    </div>
+<div id="message">
+YAYYYYY! I love you so much ❤️
+</div>
 
 </div>
 
 <script>
 
-/* BUTTON LOGIC */
-
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const message = document.getElementById("message");
 const popupImage = document.getElementById("popupImage");
-
-/* Move NO button randomly */
+const message = document.getElementById("message");
 
 function moveButton() {
+
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
 
@@ -200,12 +178,10 @@ function moveButton() {
 noBtn.addEventListener("mouseover", moveButton);
 noBtn.addEventListener("click", moveButton);
 
-/* YES button action */
-
 yesBtn.addEventListener("click", function() {
 
-    message.style.display = "block";
     popupImage.classList.add("show");
+    message.style.display = "block";
 
 });
 
